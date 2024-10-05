@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, TextInput, StyleSheet, Text, ScrollView, Image, TouchableOpacity, Modal } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
 
 // Sample data for one-on-one sessions
 const oneOnOneSessions = [
@@ -206,7 +207,7 @@ const ExploreScreen = () => {
     <SafeAreaView style={styles.container}>
       <View style={styles.searchContainer}>
         <View style={styles.searchBarWrapper}>
-          <Ionicons name="search" size={20} color="#a0a0a0" style={styles.searchIcon} />
+          <Feather name="search" size={20} color="#ffffff" style={styles.searchIcon} />
           <TextInput
             style={styles.searchBar}
             placeholder="Search events, therapists..."
