@@ -16,11 +16,11 @@ export default function TabLayout() {
         headerShown: false,
       }}>
       <Tabs.Screen
-        name="index"
+        name="chat"
         options={{
-          title: 'Home',
+          title: 'Chat',
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
+            <Entypo name="users" size={24} color={color} />
           ),
         }}
       />
@@ -29,16 +29,16 @@ export default function TabLayout() {
         options={{
           title: 'Explore',
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
+            <Entypo name="magnifying-glass" size={24} color={color} />
           ),
         }}
       />
       <Tabs.Screen
-        name="chat"
+        name="activities"
         options={{
-          title: 'Chat',
+          title: 'Activities',
           tabBarIcon: ({ color, focused }) => (
-            <Entypo name="users" size={24} color={color} />
+            <Feather name="user" size={24} color={color} />
           ),
         }}
       />
