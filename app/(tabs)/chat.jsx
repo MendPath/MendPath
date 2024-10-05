@@ -27,7 +27,6 @@ const HomeScreen = () => {
       setMessage('');
 
       try {
-        console.log("Post request")
         const response = await axios.post('http://10.206.39.61:5000/chat', {
             message: message,
         }, {
@@ -36,9 +35,8 @@ const HomeScreen = () => {
             }
         });
 
-        console.log("Post request Done")
-
-        const botReply = response.data.reply; // Adjust according to your response
+        const botReply = response.data.response; // Adjust according to your response
+        console.log(botReply);
         setChatHistory((prevHistory) => [
           ...prevHistory,
           { text: botReply, sender: 'bot' },
