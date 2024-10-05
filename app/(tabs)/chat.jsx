@@ -1,30 +1,58 @@
-import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity, TextInput, StyleSheet, KeyboardAvoidingView, Platform, Keyboard, ScrollView, SafeAreaView } from 'react-native';
+import React, { useState } from 'react';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  TextInput,
+  StyleSheet,
+  KeyboardAvoidingView,
+  Platform,
+  ScrollView,
+  SafeAreaView,
+} from 'react-native';
 import { Camera } from 'lucide-react-native';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
+import axios from 'axios'; // Import axios
 
 const HomeScreen = () => {
   const [message, setMessage] = useState('');
   const [chatHistory, setChatHistory] = useState([
-    { text: 'Welcome to MendPath. How can I assist you today?', sender: 'bot' }
+    { text: 'Welcome to MendPath. How can I assist you today?', sender: 'bot' },
   ]);
   const [isMuted, setIsMuted] = useState(false);
 
-  const sendMessage = () => {
+  const sendMessage = async () => {
     if (message.trim()) {
       setChatHistory([...chatHistory, { text: message, sender: 'user' }]);
       setMessage('');
-      // Simulate a response
-      setTimeout(() => {
-        setChatHistory(prevHistory => [...prevHistory, { text: 'Thank you for your message. How else can I help?', sender: 'bot' }]);
-      }, 1000);
+
+      try {
+        console.log("Post request")
+        const response = await axios.post('http://10.206.39.61:5000/chat', {
+            message: message,
+        }, {
+            headers: {
+                'Content-Type': 'application/json', // Ensure this is set
+            }
+        });
+
+        console.log("Post request Done")
+
+        const botReply = response.data.reply; // Adjust according to your response
+        setChatHistory((prevHistory) => [
+          ...prevHistory,
+          { text: botReply, sender: 'bot' },
+        ]);
+      } catch (error) {
+        console.error("Error sending message:", error);
+      }
     }
   };
 
   return (
     <SafeAreaView style={styles.container}>
-      <KeyboardAvoidingView 
-        behavior={Platform.OS === "ios" ? "padding" : "height"}
+      <KeyboardAvoidingView
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         style={styles.keyboardAvoid}
       >
         <View style={styles.header}>
@@ -51,7 +79,7 @@ const HomeScreen = () => {
 
         <View style={styles.inputContainer}>
           <TouchableOpacity style={styles.muteButton} onPress={() => setIsMuted(!isMuted)}>
-            <View style={styles.muteButtonText}>{!isMuted ? <FontAwesome name="microphone" size={24} color="white" />: <FontAwesome name="microphone-slash" size={24} color="white" /> }</View>
+            <View style={styles.muteButtonText}>{!isMuted ? <FontAwesome name="microphone" size={24} color="white" /> : <FontAwesome name="microphone-slash" size={24} color="white" />}</View>
           </TouchableOpacity>
           <TextInput
             style={styles.input}
