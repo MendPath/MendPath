@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, FlatList, ScrollView, SafeAreaView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import axios from 'axios'; // Import axios
+import { FLASK_API_ENDPOINT } from '@env';
+import { useFocusEffect } from '@react-navigation/native'; // Import useFocusEffect
 
 const NotesPage = () => {
   const [userNotes, setUserNotes] = useState([]);
@@ -8,6 +11,7 @@ const NotesPage = () => {
   const [newNoteTitle, setNewNoteTitle] = useState('');
   const [newNoteBody, setNewNoteBody] = useState('');
 
+  // Add a user note to the list
   const addNote = () => {
     if (newNoteTitle.trim() !== '' && newNoteBody.trim() !== '') {
       setUserNotes([...userNotes, { title: newNoteTitle, body: newNoteBody }]);
@@ -16,11 +20,31 @@ const NotesPage = () => {
     }
   };
 
+  // Function to render each note
   const renderNote = ({ item }) => (
     <View style={styles.noteItem}>
       <Text style={styles.noteTitle}>{item.title}</Text>
       <Text style={styles.noteBody}>{item.body}</Text>
     </View>
+  );
+
+  // Function to get AI notes from the Flask API
+  const getNote = async () => {
+    try {
+      console.log("Fetching AI notes...");
+      const response = await axios.get(`${FLASK_API_ENDPOINT}/notes`);
+      console.log(response.data.response);
+      setAiNotes([{ title: "AI Notes", body: response.data.response }]); // Adjust AI notes formatting if needed
+    } catch (error) {
+      console.log("Error fetching AI notes", error);
+    }
+  };
+
+  // Fetch AI notes whenever the page comes into focus
+  useFocusEffect(
+    useCallback(() => {
+      getNote();
+    }, [])
   );
 
   return (
@@ -73,10 +97,12 @@ const NotesPage = () => {
   );
 };
 
+export default NotesPage;
+
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: '#e0d4c8', // Beige background
+    backgroundColor: '#e0d4c8',
   },
   container: {
     flex: 1,
@@ -88,9 +114,8 @@ const styles = StyleSheet.create({
   },
   pageHeading: {
     fontSize: 28,
-    fontFamily: 'Nunito Sans',
     fontWeight: 'bold',
-    color: '#262626', // Dark text color
+    color: '#262626',
     textAlign: 'center',
   },
   inputContainer: {
@@ -100,10 +125,10 @@ const styles = StyleSheet.create({
   searchBarWrapper: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#ffffff', // White background for input
+    backgroundColor: '#ffffff',
     borderRadius: 10,
     marginBottom: 10,
-    borderColor: '#B0A54F', // Brown border
+    borderColor: '#B0A54F',
     borderWidth: 1,
   },
   searchIcon: {
@@ -112,25 +137,22 @@ const styles = StyleSheet.create({
   input: {
     flex: 1,
     height: 40,
-    fontFamily: 'Nunito Sans',
-    color: '#262626', // Dark text color
+    color: '#262626',
     paddingHorizontal: 10,
   },
   bodyInput: {
     height: 100,
     textAlignVertical: 'top',
-    fontFamily: 'Nunito Sans',
-    backgroundColor: '#ffffff', // White background for input
+    backgroundColor: '#ffffff',
     borderRadius: 10,
-    borderColor: '#B0A54F', // Brown border
+    borderColor: '#B0A54F',
     borderWidth: 1,
     padding: 10,
     marginBottom: 10,
   },
   addButton: {
-    backgroundColor: '#5e4d43', // Green button
+    backgroundColor: '#5e4d43',
     padding: 10,
-    fontFamily: 'Nunito Sans',
     borderRadius: 5,
     shadowColor: '#000', // Shadow for iOS
     shadowOffset: { width: 2, height: 4 },
@@ -139,26 +161,23 @@ const styles = StyleSheet.create({
     elevation: 5, // Shadow for Android
   },
   addButtonText: {
-    color: '#ffffff', // White text
+    color: '#ffffff',
     textAlign: 'center',
-    fontFamily: 'Nunito Sans',
     fontWeight: 'bold',
   },
   sectionTitle: {
     fontSize: 20,
     fontWeight: 'bold',
-    fontFamily: 'Nunito Sans',
-    color: '#262626', // Dark text color
+    color: '#262626',
     marginTop: 20,
     marginBottom: 10,
   },
   noteItem: {
-    backgroundColor: '#ffffff', // White background for notes
+    backgroundColor: '#ffffff',
     borderRadius: 10,
     padding: 15,
-    fontFamily: 'Nunito Sans',
     marginBottom: 10,
-    borderColor: '#B0A54F', // Brown border
+    borderColor: '#B0A54F',
     borderWidth: 1,
     shadowColor: '#000', // Shadow for iOS
     shadowOffset: { width: 2, height: 4 },
@@ -169,14 +188,10 @@ const styles = StyleSheet.create({
   noteTitle: {
     fontSize: 16,
     fontWeight: 'bold',
-    fontFamily: 'Nunito Sans',
-    color: '#262626', // Dark text color
+    color: '#262626',
   },
   noteBody: {
     fontSize: 14,
-    fontFamily: 'Nunito Sans',
-    color: '#333', // Dark text color
+    color: '#333',
   },
 });
-
-export default NotesPage;

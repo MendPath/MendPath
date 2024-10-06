@@ -11,7 +11,6 @@ const HomeScreen = () => {
     { text: 'Welcome to MendPath. How can I assist you today?', sender: 'bot' },
   ]);
   const [isMuted, setIsMuted] = useState(false);
-
   const sendMessage = async () => {
     if (message.trim()) {
       setChatHistory([...chatHistory, { text: message, sender: 'user' }]);
