@@ -13,6 +13,7 @@ import {
 import { Camera } from 'lucide-react-native';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import axios from 'axios'; // Import axios
+import { FLASK_API_ENDPOINT } from '@env';
 
 const HomeScreen = () => {
   const [message, setMessage] = useState('');
@@ -27,7 +28,8 @@ const HomeScreen = () => {
       setMessage('');
 
       try {
-        const response = await axios.post('http://10.206.39.61:5000/chat', {
+        // console.log(FLASK_API_ENDPOINT)
+        const response = await axios.post(FLASK_API_ENDPOINT + '/chat', {
             message: message,
         }, {
             headers: {
@@ -35,8 +37,8 @@ const HomeScreen = () => {
             }
         });
 
-        const botReply = response.data.response; // Adjust according to your response
-        console.log(botReply);
+        const botReply = response.data.response; // botReply stores the responses
+        // console.log(botReply);
         setChatHistory((prevHistory) => [
           ...prevHistory,
           { text: botReply, sender: 'bot' },

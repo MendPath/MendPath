@@ -17,7 +17,7 @@ export default function TabLayout() {
         headerShown: false,
       }}>
       <Tabs.Screen
-        name="chat"
+        name="index"
         options={{
           title: 'Chat',
           tabBarIcon: ({ color, focused }) => (
@@ -40,6 +40,15 @@ export default function TabLayout() {
           title: 'Activities',
           tabBarIcon: ({ color, focused }) => (
             <Feather name="user" size={24} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="notes"
+        options={{
+          title: 'Notes',
+          tabBarIcon: ({ color, focused }) => (
+            <Entypo name="book" size={24} color={color} />
           ),
         }}
       />
