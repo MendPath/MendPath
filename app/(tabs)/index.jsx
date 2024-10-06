@@ -17,6 +17,7 @@ const HomeScreen = () => {
       setMessage('');
 
       try {
+        print(FLASK_API_ENDPOINT)
         const response = await axios.post(FLASK_API_ENDPOINT + '/chat', {
           message: message,
         }, {

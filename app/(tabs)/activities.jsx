@@ -16,7 +16,7 @@ const sampleActivities = [
   { id: '3', text: 'Read a book', completed: false, notes: '' },
 ];
 
-const aiSuggestions = [
+const initialAISuggestions = [
   'Try a new recipe',
   'Learn a musical instrument',
 ];
@@ -55,6 +55,7 @@ const ActivityItem = ({ activity, onToggle, onUpdateNotes }) => {
 
 const ActivitiesPage = () => {
   const [activities, setActivities] = useState(sampleActivities);
+  const [aiSuggestions, setAiSuggestions] = useState(initialAISuggestions);
   const [newActivity, setNewActivity] = useState('');
 
   const handleToggle = (id) => {
@@ -79,6 +80,16 @@ const ActivitiesPage = () => {
       }]);
       setNewActivity('');
     }
+  };
+
+  const handleAddAISuggestion = (suggestion) => {
+    setActivities([...activities, {
+      id: String(activities.length + 1),
+      text: suggestion,
+      completed: false,
+      notes: ''
+    }]);
+    setAiSuggestions(aiSuggestions.filter(item => item !== suggestion));
   };
 
   return (
@@ -106,12 +117,16 @@ const ActivitiesPage = () => {
         keyExtractor={item => item.id}
       />
 
-      <View style={styles.searchResultItem}>
-        <Text style={styles.searchResultName}>AI Suggested Activities</Text>
-        {aiSuggestions.map((suggestion, index) => (
-          <Text key={index} style={styles.searchResultType}>{suggestion}</Text>
-        ))}
-      </View>
+      <Text style={styles.sectionTitle}>AI Suggested Activities</Text>
+      {aiSuggestions.map((suggestion, index) => (
+        <TouchableOpacity
+          key={index}
+          onPress={() => handleAddAISuggestion(suggestion)}
+          style={styles.aiSuggestionItem}
+        >
+          <Text style={styles.aiSuggestionText}>{suggestion}</Text>
+        </TouchableOpacity>
+      ))}
 
       <View style={styles.addActivityContainer}>
         <TextInput
@@ -170,17 +185,15 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
     marginBottom: 10,
 
-    // Shadow for iOS
-    shadowColor: '#000', // Color of the shadow
+    shadowColor: '#000', 
     shadowOffset: {
-      width: 0,  // Horizontal offset
-      height: 2, // Vertical offset
+      width: 0,
+      height: 2,
     },
-    shadowOpacity: 0.25, // Opacity of the shadow
-    shadowRadius: 3.5,   // Radius of the shadow
+    shadowOpacity: 0.25,
+    shadowRadius: 3.5,   
 
-    // Shadow for Android
-    elevation: 5, // Elevation for shadow on Android
+    elevation: 5,
   },
   activityHeader: {
     flexDirection: 'row',
@@ -215,13 +228,6 @@ const styles = StyleSheet.create({
     textDecorationLine: 'line-through',
     color: '#a0a0a0',
   },
-  searchResultType: {
-    fontSize: 12,
-    color: '#a0a0a0',
-    fontFamily: 'Nunito Sans',
-    marginTop: 5,
-    fontStyle: 'italic',
-  },
   notesInput: {
     backgroundColor: '#5e4d43',
     borderRadius: 5,
@@ -230,23 +236,33 @@ const styles = StyleSheet.create({
     marginTop: 10,
     color: '#ffffff',
   },
+  aiSuggestionItem: {
+    backgroundColor: '#5e4d43',
+    borderRadius: 10,
+    padding: 10,
+    marginHorizontal: 10,
+    marginBottom: 10,
+  },
+  aiSuggestionText: {
+    fontSize: 16,
+    color: '#ffffff',
+    fontFamily: 'Nunito Sans',
+  },
   addActivityContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     marginHorizontal: 10,
     marginBottom: 20,
 
-    // Shadow for iOS
-    shadowColor: '#000000', // Color of the shadow
+    shadowColor: '#000000',
     shadowOffset: {
-      width: 3,  // Horizontal offset
-      height: 2, // Vertical offset
+      width: 3,
+      height: 2,
     },
-    shadowOpacity: 0.5, // Opacity of the shadow
-    shadowRadius: 3.5,   // Radius of the shadow
+    shadowOpacity: 0.5,
+    shadowRadius: 3.5,
     
-    // Shadow for Android
-    elevation: 5, // Elevation for shadow on Android
+    elevation: 5,
   },
   addActivityInput: {
     flex: 1,
