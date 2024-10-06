@@ -156,6 +156,7 @@ const styles = StyleSheet.create({
     marginBottom: 12,
     borderRadius: 20,
     maxWidth: '80%',
+    overflow: 'hidden'
   },
   botMessageContainer: {
     alignSelf: 'flex-start',

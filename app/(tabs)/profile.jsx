@@ -11,6 +11,7 @@ const Profile = () => {
   //const [sleepData, setSleepData] = useState([]);
   const [isSettingsModalVisible, setIsSettingsModalVisible] = useState(false);
   const [sleepData, setSleepData] = useState([7.2, 6.8, 7.5, 6.0, 7.8, 6.5, 7.0]); // Fake data for the past 7 days
+  const [soberData, setSoberData] = useState([120, 121, 122, 123, 124, 125, 126]); // Fake data for the past 7 days
 
 
   const [userInfo, setUserInfo] = useState({
@@ -19,6 +20,7 @@ const Profile = () => {
     bio: 'I love exploring new things and meeting new people!',
     image: 'https://via.placeholder.com/150',
     hoursOfSleep: '6.5',
+    daysOfSober: '126',
     stateOfMind: 'Feeling good today!',
     insuranceNumber: '123456789',
     preferredHealthProvider: 'ABC Health',
@@ -192,8 +194,51 @@ const Profile = () => {
           />
         </View>
       </View>
+      <View style={styles.infoBox}>
+        <View style={styles.infoColumn}>
+          <Ionicons name="speedometer" size={24} color="#000000" />
+          <Text style={styles.infoTitle}>Days Sober</Text>
+          <Text style={styles.infoContent}>{userInfo.daysOfSober} hours</Text>
+        </View>
+        <View style={styles.graphContainer}>
+          <LineChart
+            data={{
+              labels: soberData.length ? soberData.map((_, index) => `Day ${index + 1}`) : ['', '', '', '', '', '', ''],
+              datasets: [{
+                data: soberData.length ? soberData : [0, 0, 0, 0, 0, 0, 0]
+              }]
+            }}
+            width={Dimensions.get('window').width * 0.45}
+            height={100}
+            chartConfig={{
+              backgroundColor: '#ffffff',
+              backgroundGradientFrom: '#ffffff',
+              backgroundGradientTo: '#ffffff',
+              decimalPlaces: 1,
+              color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
+              labelColor: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
+              style: {
+                borderRadius: 16
+              },
+              propsForDots: {
+                r: "3",
+                strokeWidth: "1",
+                stroke: "#ffa726"
+              }
+            }}
+            bezier
+            style={{
+              marginVertical: 8,
+              borderRadius: 16
+            }}
+            withVerticalLines={false}
+            withHorizontalLines={false}
+          />
+        </View>
+      </View>
 
       <View style={styles.infoBox}>
+        
   <View style={styles.infoColumn}>
     <Ionicons name="heart-outline" size={24} color="#000000" />
     <Text style={styles.infoTitle}>State of Mind</Text>

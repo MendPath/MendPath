@@ -353,6 +353,7 @@ const ExploreScreen = () => {
           </View>
         ) : (
           <>
+          <Text style={styles.sectionTitle}>Manhattan, NY</Text>
           <View style={styles.mapContainer}>
             <MapView style={styles.map} initialRegion={{
                   latitude: 40.816357,
@@ -714,7 +715,7 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
   cancelRSVPButton: {
-    backgroundColor: '#FF6347',
+    backgroundColor: '#4CAF50',
     padding: 5,
     borderRadius: 5,
     marginTop: 10,

@@ -139,7 +139,7 @@ const ActivitiesPage = () => {
         keyExtractor={item => item.id}
       />
 
-      <Text style={styles.sectionTitle}>AI Suggested Activities</Text>
+      <Text style={styles.sectionTitle}>Suggested Activities</Text>
       {aiSuggestions.map((suggestion, index) => (
         <TouchableOpacity
           key={index}
