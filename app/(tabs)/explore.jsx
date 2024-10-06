@@ -453,7 +453,7 @@ const ExploreScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#001F3F',
+    backgroundColor: '#e0d4c8',
   },
   searchContainer: {
     padding: 10,
@@ -461,7 +461,7 @@ const styles = StyleSheet.create({
   searchBarWrapper: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#002a54',
+    backgroundColor: '#ffffff',
     borderRadius: 10,
     borderColor: '#a0a0a0',
     borderWidth: 1,
@@ -469,12 +469,15 @@ const styles = StyleSheet.create({
   modalAbout:{
     color:'white',
     fontSize:20,
+    fontFamily:'Courier',
     fontWeight:'bold',
     paddingTop:30
   },
   modalAboutContent:{
     color:'white',
     fontSize: 17,
+    fontFamily:'Courier',
+
     lineHeight:28,
     paddingTop:15,
   },
@@ -483,6 +486,7 @@ const styles = StyleSheet.create({
   },
   searchIcon: {
     padding: 10,
+    color: '#a0a0a0',
   },
   searchBar: {
     flex: 1,
@@ -494,25 +498,31 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   searchResultItem: {
-    backgroundColor: '#002a54',
+    backgroundColor: '#5e4d43',
     borderRadius: 10,
     padding: 10,
     marginBottom: 10,
   },
   searchResultName: {
     fontSize: 16,
+    fontFamily:'Courier',
+
     fontWeight: 'bold',
     color: '#ffffff',
   },
   searchResultTherapist: {
     fontSize: 14,
     color: '#a0a0a0',
+    fontFamily:'Courier',
+
     marginTop: 5,
   },
   searchResultType: {
     fontSize: 12,
     color: '#a0a0a0',
     marginTop: 5,
+    fontFamily:'Courier',
+
     fontStyle: 'italic',
   },
   mapContainer: {
@@ -539,17 +549,23 @@ const styles = StyleSheet.create({
   mapPlaceholderText: {
     color: '#ffffff',
     fontSize: 18,
+    fontFamily:'Courier',
+
     fontWeight: 'bold',
   },
   mapPlaceholderSubtext: {
     color: '#a0a0a0',
     fontSize: 14,
+    fontFamily:'Courier',
+
     marginTop: 5,
   },
   sectionTitle: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#ffffff',
+    color: '#000000',
+    fontFamily:'Courier',
+
     marginLeft: 10,
     marginTop: 20,
     marginBottom: 10,
@@ -559,7 +575,7 @@ const styles = StyleSheet.create({
   },
   sessionBox: {
     width: 260,
-    backgroundColor: '#002a54',
+    backgroundColor: '#5e4d43',
     borderRadius: 10,
     marginRight: 10,
     marginBottom: 10,
@@ -582,35 +598,45 @@ const styles = StyleSheet.create({
   },
   therapistName: {
     fontSize: 18,
+    fontFamily:'Courier',
+
     fontWeight: 'bold',
     color: '#ffffff',
   },
   specialization: {
     fontSize: 16,
     paddingTop:5,
+    fontFamily:'Courier',
+
     color: '#a0a0a0',
     marginBottom: 5,
   },
   sessionDate: {
     fontSize: 12,
+    fontFamily:'Courier',
+
     color: '#a0a0a0',
     marginTop: 5,
   },
   sessionTitle: {
     fontSize: 14,
     fontWeight: 'bold',
+    fontFamily:'Courier',
+
     color: '#ffffff',
     marginTop: 5,
   },
   sessionDescription: {
     fontSize: 12,
     color: '#a0a0a0',
+    fontFamily:'Courier',
+
     marginTop: 5,
   },
   eventBox: {
     width: 260,
     height:280,
-    backgroundColor: '#002a54',
+    backgroundColor: '#5e4d43',
     borderRadius: 8,
     marginRight: 10,
     marginBottom: 10,
@@ -626,16 +652,22 @@ const styles = StyleSheet.create({
   },
   eventName: {
     fontSize: 16,
+    fontFamily:'Courier',
+
     fontWeight: 'bold',
     color: '#ffffff',
   },
   eventDescription: {
     fontSize: 12,
+    fontFamily:'Courier',
+
     color: '#a0a0a0',
     marginTop: 5,
   },
   eventDate: {
     fontSize: 12,
+    fontFamily:'Courier',
+
     color: '#a0a0a0',
     marginTop: 5,
   },
@@ -643,24 +675,30 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   rsvpEventBox: {
-    backgroundColor: '#002a54',
+    backgroundColor: '#5e4d43',
     borderRadius: 10,
     padding: 15,
     marginBottom: 10,
   },
   rsvpEventName: {
     fontSize: 16,
+    fontFamily:'Courier',
+
     fontWeight: 'bold',
     color: '#ffffff',
   },
   rsvpEventDate: {
     fontSize: 14,
+    fontFamily:'Courier',
+
     color: '#a0a0a0',
     marginTop: 5,
   },
   rsvpEventTime: {
     fontSize: 12,
     color: '#4CAF50',
+    fontFamily:'Courier',
+
     marginTop: 5,
   },
   cancelRSVPButton: {
@@ -673,6 +711,8 @@ const styles = StyleSheet.create({
   cancelRSVPButtonText: {
     color: '#ffffff',
     fontSize: 12,
+    fontFamily:'Courier',
+
     fontWeight: 'bold',
   },
   suggestEventButton: {
@@ -695,7 +735,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     paddingTop:100,
-    backgroundColor: '#002a54',
+    backgroundColor: '#5e4d43',
     alignItems: 'center',
   },
   modalContent: {
@@ -709,12 +749,16 @@ const styles = StyleSheet.create({
   modalTitle: {
     fontSize: 24,
     fontWeight: 'bold',
+    fontFamily:'Courier',
+
     color: '#ffffff',
     marginBottom: 10,
   },
   modalDate:{
     display:'flex',
     flexDirection:'row',
+    fontFamily:'Courier',
+
     paddingTop:10,
     paddingBottom:10
   },
@@ -724,10 +768,14 @@ const styles = StyleSheet.create({
   modalSubtitle: {
     fontSize: 16,
     color: '#a0a0a0',
+    fontFamily:'Courier',
+
     marginBottom: 10,
   },
   modalSubtitleBold: {
     fontSize: 16,
+    fontFamily:'Courier',
+
     color: '#ffffff',
     marginBottom: 10,
   },
@@ -741,7 +789,7 @@ const styles = StyleSheet.create({
     padding:35,
     paddingTop:15,
     marginLeft:0,
-    backgroundColor:'#002040'
+    backgroundColor:'#5e4d43'
   },
   timesViewer: {
     display:'flex',
@@ -755,10 +803,12 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   selectedTimeButton: {
-    backgroundColor: '#4CAF50',
+    backgroundColor: '#9c8b81',
   },
   timeButtonText: {
     color: '#ffffff',
+    fontFamily:'Courier',
+
     textAlign: 'center',
   },
   rsvpButton: {
@@ -771,6 +821,8 @@ const styles = StyleSheet.create({
   rsvpButtonText: {
     color: '#ffffff',
     textAlign: 'center',
+    fontFamily:'Courier',
+
     fontWeight: 'bold',
     fontSize:16
   },
@@ -783,23 +835,27 @@ const styles = StyleSheet.create({
   },
   closeButtonText: {
     color: '#a0a0a0',
+    fontFamily:'Courier',
+
     textAlign: 'center',
   },
   input: {
-    backgroundColor: '#003366',
+    backgroundColor: '#3b3735',
     borderRadius: 5,
     padding: 10,
     marginBottom: 10,
     color: '#ffffff',
   },
   suggestButton: {
-    backgroundColor: '#4CAF50',
+    backgroundColor: '#000000',
     padding: 10,
     borderRadius: 5,
     marginTop: 10,
   },
   suggestButtonText: {
     color: '#ffffff',
+    fontFamily:'Courier',
+
     textAlign: 'center',
     fontWeight: 'bold',
   },

@@ -76,7 +76,7 @@ const NotesPage = () => {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: '#001F3F',
+    backgroundColor: '#e0d4c8', // Beige background
   },
   container: {
     flex: 1,
@@ -88,8 +88,10 @@ const styles = StyleSheet.create({
   },
   pageHeading: {
     fontSize: 28,
+    fontFamily: 'courier',
+
     fontWeight: 'bold',
-    color: '#ffffff',
+    color: '#262626', // Dark text color
     textAlign: 'center',
   },
   inputContainer: {
@@ -99,9 +101,11 @@ const styles = StyleSheet.create({
   searchBarWrapper: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#002a54',
+    backgroundColor: '#ffffff', // White background for input
     borderRadius: 10,
     marginBottom: 10,
+    borderColor: '#B0A54F', // Brown border
+    borderWidth: 1,
   },
   searchIcon: {
     padding: 10,
@@ -109,49 +113,68 @@ const styles = StyleSheet.create({
   input: {
     flex: 1,
     height: 40,
-    color: '#ffffff',
+    fontFamily: 'courier',
+
+    color: '#262626', // Dark text color
     paddingHorizontal: 10,
   },
   bodyInput: {
     height: 100,
     textAlignVertical: 'top',
-    backgroundColor: '#002a54',
+    fontFamily: 'courier',
+
+    backgroundColor: '#ffffff', // White background for input
     borderRadius: 10,
+    borderColor: '#B0A54F', // Brown border
+    borderWidth: 1,
     padding: 10,
     marginBottom: 10,
   },
   addButton: {
-    backgroundColor: '#4CAF50',
+    backgroundColor: '#5e4d43', // Green button
     padding: 10,
+    fontFamily: 'courier',
+
     borderRadius: 5,
   },
   addButtonText: {
-    color: '#ffffff',
+    color: '#ffffff', // White text
     textAlign: 'center',
+    fontFamily: 'courier',
+
     fontWeight: 'bold',
   },
   sectionTitle: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#ffffff',
+    fontFamily: 'courier',
+
+    color: '#262626', // Dark text color
     marginTop: 20,
     marginBottom: 10,
   },
   noteItem: {
-    backgroundColor: '#002a54',
+    backgroundColor: '#ffffff', // White background for notes
     borderRadius: 10,
     padding: 15,
+    fontFamily: 'courier',
+
     marginBottom: 10,
+    borderColor: '#B0A54F', // Brown border
+    borderWidth: 1,
   },
   noteTitle: {
     fontSize: 16,
     fontWeight: 'bold',
-    color: '#ffffff',
+    fontFamily: 'courier',
+
+    color: '#262626', // Dark text color
   },
   noteBody: {
     fontSize: 14,
-    color: '#a0a0a0',
-    marginTop: 5,
+    fontFamily: 'courier',
+
+    color: '#333', // Dark text color
   },
 });
 
