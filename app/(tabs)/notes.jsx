@@ -89,7 +89,6 @@ const styles = StyleSheet.create({
   pageHeading: {
     fontSize: 28,
     fontFamily: 'courier',
-
     fontWeight: 'bold',
     color: '#262626', // Dark text color
     textAlign: 'center',
@@ -114,7 +113,6 @@ const styles = StyleSheet.create({
     flex: 1,
     height: 40,
     fontFamily: 'courier',
-
     color: '#262626', // Dark text color
     paddingHorizontal: 10,
   },
@@ -122,7 +120,6 @@ const styles = StyleSheet.create({
     height: 100,
     textAlignVertical: 'top',
     fontFamily: 'courier',
-
     backgroundColor: '#ffffff', // White background for input
     borderRadius: 10,
     borderColor: '#B0A54F', // Brown border
@@ -134,21 +131,23 @@ const styles = StyleSheet.create({
     backgroundColor: '#5e4d43', // Green button
     padding: 10,
     fontFamily: 'courier',
-
     borderRadius: 5,
+    shadowColor: '#000', // Shadow for iOS
+    shadowOffset: { width: 2, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 3.5,
+    elevation: 5, // Shadow for Android
   },
   addButtonText: {
     color: '#ffffff', // White text
     textAlign: 'center',
     fontFamily: 'courier',
-
     fontWeight: 'bold',
   },
   sectionTitle: {
     fontSize: 20,
     fontWeight: 'bold',
     fontFamily: 'courier',
-
     color: '#262626', // Dark text color
     marginTop: 20,
     marginBottom: 10,
@@ -158,22 +157,24 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     padding: 15,
     fontFamily: 'courier',
-
     marginBottom: 10,
     borderColor: '#B0A54F', // Brown border
     borderWidth: 1,
+    shadowColor: '#000', // Shadow for iOS
+    shadowOffset: { width: 2, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 3.5,
+    elevation: 5, // Shadow for Android
   },
   noteTitle: {
     fontSize: 16,
     fontWeight: 'bold',
     fontFamily: 'courier',
-
     color: '#262626', // Dark text color
   },
   noteBody: {
     fontSize: 14,
     fontFamily: 'courier',
-
     color: '#333', // Dark text color
   },
 });

@@ -46,7 +46,6 @@ const ActivityItem = ({ activity, onToggle, onUpdateNotes }) => {
           onChangeText={(text) => onUpdateNotes(activity.id, text)}
           placeholder="Add notes..."
           placeholderTextColor="#a0a0a0"
-          onSubmitEditing={() => handleSubmit()}
           multiline
         />
       )}
@@ -133,13 +132,13 @@ const ActivitiesPage = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#001F3F',
+    backgroundColor: '#e0d4c8',
   },
   searchBarWrapper: {
     marginTop: 56.6,
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#002a54',
+    backgroundColor: '#ffffff',
     borderRadius: 10,
     borderColor: '#a0a0a0',
     borderWidth: 1,
@@ -147,6 +146,7 @@ const styles = StyleSheet.create({
   },
   searchIcon: {
     padding: 10,
+    color: '#a0a0a0',
   },
   searchBar: {
     flex: 1,
@@ -157,17 +157,30 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#ffffff',
+    fontFamily: 'Courier',
+    color: '#000000',
     marginLeft: 10,
     marginTop: 20,
     marginBottom: 10,
   },
   searchResultItem: {
-    backgroundColor: '#002a54',
+    backgroundColor: '#5e4d43',
     borderRadius: 10,
     padding: 10,
     marginHorizontal: 10,
     marginBottom: 10,
+
+    // Shadow for iOS
+    shadowColor: '#000', // Color of the shadow
+    shadowOffset: {
+      width: 0,  // Horizontal offset
+      height: 2, // Vertical offset
+    },
+    shadowOpacity: 0.25, // Opacity of the shadow
+    shadowRadius: 3.5,   // Radius of the shadow
+
+    // Shadow for Android
+    elevation: 5, // Elevation for shadow on Android
   },
   activityHeader: {
     flexDirection: 'row',
@@ -187,12 +200,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   checkboxChecked: {
-    backgroundColor: '#4CAF50',
+    backgroundColor: '#000000',
     borderColor: '#4CAF50',
   },
   searchResultName: {
     flex: 1,
     fontSize: 16,
+    color: '#000000',
+    fontFamily: 'Courier',
     fontWeight: 'bold',
     color: '#ffffff',
   },
@@ -203,12 +218,14 @@ const styles = StyleSheet.create({
   searchResultType: {
     fontSize: 12,
     color: '#a0a0a0',
+    fontFamily: 'Courier',
     marginTop: 5,
     fontStyle: 'italic',
   },
   notesInput: {
-    backgroundColor: '#003366',
+    backgroundColor: '#5e4d43',
     borderRadius: 5,
+    fontFamily: 'Courier',
     padding: 10,
     marginTop: 10,
     color: '#ffffff',
@@ -218,11 +235,24 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginHorizontal: 10,
     marginBottom: 20,
+
+    // Shadow for iOS
+    shadowColor: '#000000', // Color of the shadow
+    shadowOffset: {
+      width: 3,  // Horizontal offset
+      height: 2, // Vertical offset
+    },
+    shadowOpacity: 0.5, // Opacity of the shadow
+    shadowRadius: 3.5,   // Radius of the shadow
+    
+    // Shadow for Android
+    elevation: 5, // Elevation for shadow on Android
   },
   addActivityInput: {
     flex: 1,
     height: 40,
-    backgroundColor: '#002a54',
+    fontFamily: 'Courier',
+    backgroundColor: '#5e4d43',
     borderRadius: 10,
     paddingHorizontal: 10,
     marginRight: 10,
@@ -233,6 +263,7 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     borderRadius: 20,
+    fontFamily: 'Courier',
     justifyContent: 'center',
     alignItems: 'center',
   },

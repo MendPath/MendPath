@@ -322,9 +322,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+    shadowColor: '#000000', // Shadow for iOS
+    shadowOffset: { width: 2, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 3.5,
   },
   infoColumn: {
     flexDirection: 'column',
+    
   },
   infoTitle: {
     fontSize: 18,

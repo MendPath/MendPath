@@ -575,6 +575,10 @@ const styles = StyleSheet.create({
   },
   sessionBox: {
     width: 260,
+    shadowColor: '#000000', // Shadow for iOS
+    shadowOffset: { width: 2, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 3.5,
     backgroundColor: '#5e4d43',
     borderRadius: 10,
     marginRight: 10,
@@ -636,6 +640,10 @@ const styles = StyleSheet.create({
   eventBox: {
     width: 260,
     height:280,
+    shadowColor: '#000000', // Shadow for iOS
+    shadowOffset: { width: 2, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 3.5,
     backgroundColor: '#5e4d43',
     borderRadius: 8,
     marginRight: 10,
@@ -676,6 +684,10 @@ const styles = StyleSheet.create({
   },
   rsvpEventBox: {
     backgroundColor: '#5e4d43',
+    shadowColor: '#000000', // Shadow for iOS
+    shadowOffset: { width: 2, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 3.5,
     borderRadius: 10,
     padding: 15,
     marginBottom: 10,
@@ -735,6 +747,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     paddingTop:100,
+    shadowColor: '#000000', // Shadow for iOS
+    shadowOffset: { width: 2, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 3.5,
     backgroundColor: '#5e4d43',
     alignItems: 'center',
   },
