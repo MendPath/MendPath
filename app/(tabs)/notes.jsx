@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
   },
   pageHeading: {
     fontSize: 28,
-    fontFamily: 'courier',
+    fontFamily: 'Nunito Sans',
     fontWeight: 'bold',
     color: '#262626', // Dark text color
     textAlign: 'center',
@@ -112,14 +112,14 @@ const styles = StyleSheet.create({
   input: {
     flex: 1,
     height: 40,
-    fontFamily: 'courier',
+    fontFamily: 'Nunito Sans',
     color: '#262626', // Dark text color
     paddingHorizontal: 10,
   },
   bodyInput: {
     height: 100,
     textAlignVertical: 'top',
-    fontFamily: 'courier',
+    fontFamily: 'Nunito Sans',
     backgroundColor: '#ffffff', // White background for input
     borderRadius: 10,
     borderColor: '#B0A54F', // Brown border
@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
   addButton: {
     backgroundColor: '#5e4d43', // Green button
     padding: 10,
-    fontFamily: 'courier',
+    fontFamily: 'Nunito Sans',
     borderRadius: 5,
     shadowColor: '#000', // Shadow for iOS
     shadowOffset: { width: 2, height: 4 },
@@ -141,13 +141,13 @@ const styles = StyleSheet.create({
   addButtonText: {
     color: '#ffffff', // White text
     textAlign: 'center',
-    fontFamily: 'courier',
+    fontFamily: 'Nunito Sans',
     fontWeight: 'bold',
   },
   sectionTitle: {
     fontSize: 20,
     fontWeight: 'bold',
-    fontFamily: 'courier',
+    fontFamily: 'Nunito Sans',
     color: '#262626', // Dark text color
     marginTop: 20,
     marginBottom: 10,
@@ -156,7 +156,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff', // White background for notes
     borderRadius: 10,
     padding: 15,
-    fontFamily: 'courier',
+    fontFamily: 'Nunito Sans',
     marginBottom: 10,
     borderColor: '#B0A54F', // Brown border
     borderWidth: 1,
@@ -169,12 +169,12 @@ const styles = StyleSheet.create({
   noteTitle: {
     fontSize: 16,
     fontWeight: 'bold',
-    fontFamily: 'courier',
+    fontFamily: 'Nunito Sans',
     color: '#262626', // Dark text color
   },
   noteBody: {
     fontSize: 14,
-    fontFamily: 'courier',
+    fontFamily: 'Nunito Sans',
     color: '#333', // Dark text color
   },
 });

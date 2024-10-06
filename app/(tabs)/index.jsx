@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
     marginLeft: 4,
     fontSize: 14,
     color: '#000000', // Change this to fit your scheme
-    fontFamily: 'Courier',
+    fontFamily: 'Nunito Sans',
   },
   backdrop: {
     padding: 16,
@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
     padding: 12,
     borderRadius: 20,
     fontSize: 16,
-    fontFamily: 'Courier',
+    fontFamily: 'Nunito Sans',
   },
   botMessage: {
     backgroundColor: '#ffffff', // Adjust to your desired color
@@ -178,7 +178,7 @@ const styles = StyleSheet.create({
     padding: 12,
     borderRadius: 12,
     fontSize: 16,
-    fontFamily: 'Courier',
+    fontFamily: 'Nunito Sans',
   },
   inputContainer: {
     flexDirection: 'row',
@@ -198,7 +198,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     marginHorizontal: 8,
     fontSize: 16,
-    fontFamily: 'courier',
+    fontFamily: 'Nunito Sans',
 
     color: '#000000', // Adjust to your color scheme
     backgroundColor: 'rgba(255, 255, 255, 0.3)',
@@ -217,7 +217,7 @@ const styles = StyleSheet.create({
     color: '#000000', // Adjust to your color scheme
     fontSize: 14,
     fontWeight: '600',
-    fontFamily: 'Courier new',
+    fontFamily: 'Nunito Sans new',
   },
 });
 

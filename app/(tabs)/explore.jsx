@@ -469,14 +469,14 @@ const styles = StyleSheet.create({
   modalAbout:{
     color:'white',
     fontSize:20,
-    fontFamily:'Courier',
+    fontFamily:'Nunito Sans',
     fontWeight:'bold',
     paddingTop:30
   },
   modalAboutContent:{
     color:'white',
     fontSize: 17,
-    fontFamily:'Courier',
+    fontFamily:'Nunito Sans',
 
     lineHeight:28,
     paddingTop:15,
@@ -505,7 +505,7 @@ const styles = StyleSheet.create({
   },
   searchResultName: {
     fontSize: 16,
-    fontFamily:'Courier',
+    fontFamily:'Nunito Sans',
 
     fontWeight: 'bold',
     color: '#ffffff',
@@ -513,7 +513,7 @@ const styles = StyleSheet.create({
   searchResultTherapist: {
     fontSize: 14,
     color: '#a0a0a0',
-    fontFamily:'Courier',
+    fontFamily:'Nunito Sans',
 
     marginTop: 5,
   },
@@ -521,7 +521,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: '#a0a0a0',
     marginTop: 5,
-    fontFamily:'Courier',
+    fontFamily:'Nunito Sans',
 
     fontStyle: 'italic',
   },
@@ -549,14 +549,14 @@ const styles = StyleSheet.create({
   mapPlaceholderText: {
     color: '#ffffff',
     fontSize: 18,
-    fontFamily:'Courier',
+    fontFamily:'Nunito Sans',
 
     fontWeight: 'bold',
   },
   mapPlaceholderSubtext: {
     color: '#a0a0a0',
     fontSize: 14,
-    fontFamily:'Courier',
+    fontFamily:'Nunito Sans',
 
     marginTop: 5,
   },
@@ -564,7 +564,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     color: '#000000',
-    fontFamily:'Courier',
+    fontFamily:'Nunito Sans',
 
     marginLeft: 10,
     marginTop: 20,
@@ -602,7 +602,7 @@ const styles = StyleSheet.create({
   },
   therapistName: {
     fontSize: 18,
-    fontFamily:'Courier',
+    fontFamily:'Nunito Sans',
 
     fontWeight: 'bold',
     color: '#ffffff',
@@ -610,14 +610,14 @@ const styles = StyleSheet.create({
   specialization: {
     fontSize: 16,
     paddingTop:5,
-    fontFamily:'Courier',
+    fontFamily:'Nunito Sans',
 
     color: '#a0a0a0',
     marginBottom: 5,
   },
   sessionDate: {
     fontSize: 12,
-    fontFamily:'Courier',
+    fontFamily:'Nunito Sans',
 
     color: '#a0a0a0',
     marginTop: 5,
@@ -625,7 +625,7 @@ const styles = StyleSheet.create({
   sessionTitle: {
     fontSize: 14,
     fontWeight: 'bold',
-    fontFamily:'Courier',
+    fontFamily:'Nunito Sans',
 
     color: '#ffffff',
     marginTop: 5,
@@ -633,7 +633,7 @@ const styles = StyleSheet.create({
   sessionDescription: {
     fontSize: 12,
     color: '#a0a0a0',
-    fontFamily:'Courier',
+    fontFamily:'Nunito Sans',
 
     marginTop: 5,
   },
@@ -660,21 +660,21 @@ const styles = StyleSheet.create({
   },
   eventName: {
     fontSize: 16,
-    fontFamily:'Courier',
+    fontFamily:'Nunito Sans',
 
     fontWeight: 'bold',
     color: '#ffffff',
   },
   eventDescription: {
     fontSize: 12,
-    fontFamily:'Courier',
+    fontFamily:'Nunito Sans',
 
     color: '#a0a0a0',
     marginTop: 5,
   },
   eventDate: {
     fontSize: 12,
-    fontFamily:'Courier',
+    fontFamily:'Nunito Sans',
 
     color: '#a0a0a0',
     marginTop: 5,
@@ -694,14 +694,14 @@ const styles = StyleSheet.create({
   },
   rsvpEventName: {
     fontSize: 16,
-    fontFamily:'Courier',
+    fontFamily:'Nunito Sans',
 
     fontWeight: 'bold',
     color: '#ffffff',
   },
   rsvpEventDate: {
     fontSize: 14,
-    fontFamily:'Courier',
+    fontFamily:'Nunito Sans',
 
     color: '#a0a0a0',
     marginTop: 5,
@@ -709,7 +709,7 @@ const styles = StyleSheet.create({
   rsvpEventTime: {
     fontSize: 12,
     color: '#4CAF50',
-    fontFamily:'Courier',
+    fontFamily:'Nunito Sans',
 
     marginTop: 5,
   },
@@ -723,7 +723,7 @@ const styles = StyleSheet.create({
   cancelRSVPButtonText: {
     color: '#ffffff',
     fontSize: 12,
-    fontFamily:'Courier',
+    fontFamily:'Nunito Sans',
 
     fontWeight: 'bold',
   },
@@ -765,7 +765,7 @@ const styles = StyleSheet.create({
   modalTitle: {
     fontSize: 24,
     fontWeight: 'bold',
-    fontFamily:'Courier',
+    fontFamily:'Nunito Sans',
 
     color: '#ffffff',
     marginBottom: 10,
@@ -773,7 +773,7 @@ const styles = StyleSheet.create({
   modalDate:{
     display:'flex',
     flexDirection:'row',
-    fontFamily:'Courier',
+    fontFamily:'Nunito Sans',
 
     paddingTop:10,
     paddingBottom:10
@@ -784,13 +784,13 @@ const styles = StyleSheet.create({
   modalSubtitle: {
     fontSize: 16,
     color: '#a0a0a0',
-    fontFamily:'Courier',
+    fontFamily:'Nunito Sans',
 
     marginBottom: 10,
   },
   modalSubtitleBold: {
     fontSize: 16,
-    fontFamily:'Courier',
+    fontFamily:'Nunito Sans',
 
     color: '#ffffff',
     marginBottom: 10,
@@ -823,7 +823,7 @@ const styles = StyleSheet.create({
   },
   timeButtonText: {
     color: '#ffffff',
-    fontFamily:'Courier',
+    fontFamily:'Nunito Sans',
 
     textAlign: 'center',
   },
@@ -837,7 +837,7 @@ const styles = StyleSheet.create({
   rsvpButtonText: {
     color: '#ffffff',
     textAlign: 'center',
-    fontFamily:'Courier',
+    fontFamily:'Nunito Sans',
 
     fontWeight: 'bold',
     fontSize:16
@@ -851,7 +851,7 @@ const styles = StyleSheet.create({
   },
   closeButtonText: {
     color: '#a0a0a0',
-    fontFamily:'Courier',
+    fontFamily:'Nunito Sans',
 
     textAlign: 'center',
   },
@@ -870,7 +870,7 @@ const styles = StyleSheet.create({
   },
   suggestButtonText: {
     color: '#ffffff',
-    fontFamily:'Courier',
+    fontFamily:'Nunito Sans',
 
     textAlign: 'center',
     fontWeight: 'bold',

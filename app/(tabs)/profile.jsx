@@ -205,7 +205,7 @@ const Profile = () => {
 
       {/* Settings Modal */}
       <Modal
-        animationType="slide"
+        animationType=""
         transparent={true}
         visible={isSettingsModalVisible}
         onRequestClose={() => setIsSettingsModalVisible(false)}
@@ -214,7 +214,7 @@ const Profile = () => {
           <View style={styles.modalContent}>
             <Text style={styles.modalTitle}>Insurance Information</Text>
 
-            <Text style={{ color: 'black', fontFamily: 'Courier' }}>Insurance Number:</Text>
+            <Text style={{ color: 'black', fontFamily: 'Nunito Sans' }}>Insurance Number:</Text>
             <TextInput
               style={styles.input}
               placeholder="Insurance Number"
@@ -223,7 +223,7 @@ const Profile = () => {
               onChangeText={(text) => setEditedInfo({ ...editedInfo, insuranceNumber: text })}
             />
 
-            <Text style={{ color: 'black', fontFamily: 'Courier' }}>Preferred Health Provider:</Text>
+            <Text style={{ color: 'black', fontFamily: 'Nunito Sans' }}>Preferred Health Provider:</Text>
             <TextInput
               style={styles.input}
               placeholder="Preferred Health Provider"
@@ -232,7 +232,7 @@ const Profile = () => {
               onChangeText={(text) => setEditedInfo({ ...editedInfo, preferredHealthProvider: text })}
             />
 
-            <Text style={{ color: 'black', fontFamily: 'Courier' }}>Emergency Contact:</Text>
+            <Text style={{ color: 'black', fontFamily: 'Nunito Sans' }}>Emergency Contact:</Text>
             <TextInput
               style={styles.input}
               placeholder="Emergency Contact"
@@ -279,7 +279,7 @@ const styles = StyleSheet.create({
   },
   changeImageText: {
     color: '#FFFFFF',
-    fontFamily: 'Courier',
+    fontFamily: 'Nunito Sans',
   },
   profileInfo: {
     flex: 1,
@@ -287,19 +287,19 @@ const styles = StyleSheet.create({
   },
   name: {
     fontSize: 24,
-    fontFamily: 'Courier',
+    fontFamily: 'Nunito Sans',
     fontWeight: 'bold',
   },
   age: {
     fontSize: 16,
-    fontFamily: 'Courier',
+    fontFamily: 'Nunito Sans',
   },
   editButton: {
     padding: 10,
   },
   bio: {
     fontSize: 16,
-    fontFamily: 'Courier',
+    fontFamily: 'Nunito Sans',
     color: '#555',
   },
   input: {
@@ -308,7 +308,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     marginBottom: 10,
     paddingHorizontal: 10,
-    fontFamily: 'Courier',
+    fontFamily: 'Nunito Sans',
   },
   bioInput: {
     height: 80,
@@ -333,12 +333,12 @@ const styles = StyleSheet.create({
   },
   infoTitle: {
     fontSize: 18,
-    fontFamily: 'Courier',
+    fontFamily: 'Nunito Sans',
     fontWeight: 'bold',
   },
   infoContent: {
     fontSize: 16,
-    fontFamily: 'Courier',
+    fontFamily: 'Nunito Sans',
   },
   graphContainer: {
     justifyContent: 'center',
@@ -365,7 +365,7 @@ const styles = StyleSheet.create({
   },
   modalTitle: {
     fontSize: 20,
-    fontFamily: 'Courier',
+    fontFamily: 'Nunito Sans',
     marginBottom: 20,
   },
   modalButtonContainer: {
