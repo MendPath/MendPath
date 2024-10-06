@@ -32,6 +32,7 @@ const NotesPage = () => {
   const getNote = async () => {
     try {
       console.log("Fetching AI notes...");
+      console.log(FLASK_API_ENDPOINT);
       const response = await axios.get(`${FLASK_API_ENDPOINT}/notes`);
       console.log(response.data.response);
       setAiNotes([{ title: "AI Notes", body: response.data.response }]); // Adjust AI notes formatting if needed

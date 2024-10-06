@@ -8,15 +8,17 @@ const Profile = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [appState, setAppState] = useState(AppState.currentState);
   const [sleepStartTime, setSleepStartTime] = useState(null);
-  const [sleepData, setSleepData] = useState([]);
+  //const [sleepData, setSleepData] = useState([]);
   const [isSettingsModalVisible, setIsSettingsModalVisible] = useState(false);
+  const [sleepData, setSleepData] = useState([7.2, 6.8, 7.5, 6.0, 7.8, 6.5, 7.0]); // Fake data for the past 7 days
+
 
   const [userInfo, setUserInfo] = useState({
     name: 'John Doe',
     age: '30',
     bio: 'I love exploring new things and meeting new people!',
     image: 'https://via.placeholder.com/150',
-    hoursOfSleep: '0',
+    hoursOfSleep: '6.5',
     stateOfMind: 'Feeling good today!',
     insuranceNumber: '123456789',
     preferredHealthProvider: 'ABC Health',
