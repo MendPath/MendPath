@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import {
   View,
   Text,
@@ -9,6 +9,9 @@ import {
   ScrollView,
 } from 'react-native';
 import { Feather } from '@expo/vector-icons';
+import axios from 'axios';  // Import axios
+import {FLASK_API_ENDPOINT} from '@env';
+import { useFocusEffect } from '@react-navigation/native';
 
 const sampleActivities = [
   { id: '1', text: 'Pet a dog', completed: true, notes: '' },
@@ -57,6 +60,25 @@ const ActivitiesPage = () => {
   const [activities, setActivities] = useState(sampleActivities);
   const [aiSuggestions, setAiSuggestions] = useState(initialAISuggestions);
   const [newActivity, setNewActivity] = useState('');
+
+  useFocusEffect(
+    useCallback(() => {
+        fetchActivities();
+    },[])
+  );
+
+  const fetchActivities = async () => {
+    try {
+      const response = await axios.get(FLASK_API_ENDPOINT + '/activities');
+      const suggestedActivity = response.data.activity;
+
+      if (suggestedActivity) {
+        setAiSuggestions((prev) => [...prev, suggestedActivity]);
+      }
+    } catch (error) {
+      console.error("Error fetching activities:", error);
+    }
+  };
 
   const handleToggle = (id) => {
     setActivities(activities.map(activity => 
@@ -145,144 +167,144 @@ const ActivitiesPage = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#e0d4c8',
-  },
-  searchBarWrapper: {
-    marginTop: 56.6,
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#ffffff',
-    borderRadius: 10,
-    borderColor: '#a0a0a0',
-    borderWidth: 1,
-    margin: 10,
-  },
-  searchIcon: {
-    padding: 10,
-    color: '#a0a0a0',
-  },
-  searchBar: {
-    flex: 1,
-    height: 40,
-    color: '#ffffff',
-    paddingHorizontal: 10,
-  },
-  sectionTitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    fontFamily: 'Nunito Sans',
-    color: '#000000',
-    marginLeft: 10,
-    marginTop: 20,
-    marginBottom: 10,
-  },
-  searchResultItem: {
-    backgroundColor: '#5e4d43',
-    borderRadius: 10,
-    padding: 10,
-    marginHorizontal: 10,
-    marginBottom: 10,
-
-    shadowColor: '#000', 
-    shadowOffset: {
-      width: 0,
-      height: 2,
+    container: {
+      flex: 1,
+      backgroundColor: '#e0d4c8',
     },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.5,   
-
-    elevation: 5,
-  },
-  activityHeader: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-  checkboxContainer: {
-    marginRight: 10,
-  },
-  checkbox: {
-    width: 20,
-    height: 20,
-    borderRadius: 4,
-    borderWidth: 2,
-    borderColor: '#ffffff',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  checkboxChecked: {
-    backgroundColor: '#000000',
-    borderColor: '#4CAF50',
-  },
-  searchResultName: {
-    flex: 1,
-    fontSize: 16,
-    color: '#000000',
-    fontFamily: 'Nunito Sans',
-    fontWeight: 'bold',
-    color: '#ffffff',
-  },
-  completedText: {
-    textDecorationLine: 'line-through',
-    color: '#a0a0a0',
-  },
-  notesInput: {
-    backgroundColor: '#5e4d43',
-    borderRadius: 5,
-    fontFamily: 'Nunito Sans',
-    padding: 10,
-    marginTop: 10,
-    color: '#ffffff',
-  },
-  aiSuggestionItem: {
-    backgroundColor: '#5e4d43',
-    borderRadius: 10,
-    padding: 10,
-    marginHorizontal: 10,
-    marginBottom: 10,
-  },
-  aiSuggestionText: {
-    fontSize: 16,
-    color: '#ffffff',
-    fontFamily: 'Nunito Sans',
-  },
-  addActivityContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginHorizontal: 10,
-    marginBottom: 20,
-
-    shadowColor: '#000000',
-    shadowOffset: {
-      width: 3,
-      height: 2,
+    searchBarWrapper: {
+      marginTop: 56.6,
+      flexDirection: 'row',
+      alignItems: 'center',
+      backgroundColor: '#ffffff',
+      borderRadius: 10,
+      borderColor: '#a0a0a0',
+      borderWidth: 1,
+      margin: 10,
     },
-    shadowOpacity: 0.5,
-    shadowRadius: 3.5,
-    
-    elevation: 5,
-  },
-  addActivityInput: {
-    flex: 1,
-    height: 40,
-    fontFamily: 'Nunito Sans',
-    backgroundColor: '#5e4d43',
-    borderRadius: 10,
-    paddingHorizontal: 10,
-    marginRight: 10,
-    color: '#ffffff',
-  },
-  addButton: {
-    backgroundColor: '#4CAF50',
-    width: 40,
-    height: 40,
-    borderRadius: 20,
-    fontFamily: 'Nunito Sans',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
+    searchIcon: {
+      padding: 10,
+      color: '#a0a0a0',
+    },
+    searchBar: {
+      flex: 1,
+      height: 40,
+      color: '#ffffff',
+      paddingHorizontal: 10,
+    },
+    sectionTitle: {
+      fontSize: 20,
+      fontWeight: 'bold',
+      fontFamily: 'Nunito Sans',
+      color: '#000000',
+      marginLeft: 10,
+      marginTop: 20,
+      marginBottom: 10,
+    },
+    searchResultItem: {
+      backgroundColor: '#5e4d43',
+      borderRadius: 10,
+      padding: 10,
+      marginHorizontal: 10,
+      marginBottom: 10,
+  
+      shadowColor: '#000', 
+      shadowOffset: {
+        width: 0,
+        height: 2,
+      },
+      shadowOpacity: 0.25,
+      shadowRadius: 3.5,   
+  
+      elevation: 5,
+    },
+    activityHeader: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+    },
+    checkboxContainer: {
+      marginRight: 10,
+    },
+    checkbox: {
+      width: 20,
+      height: 20,
+      borderRadius: 4,
+      borderWidth: 2,
+      borderColor: '#ffffff',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    checkboxChecked: {
+      backgroundColor: '#000000',
+      borderColor: '#4CAF50',
+    },
+    searchResultName: {
+      flex: 1,
+      fontSize: 16,
+      color: '#000000',
+      fontFamily: 'Nunito Sans',
+      fontWeight: 'bold',
+      color: '#ffffff',
+    },
+    completedText: {
+      textDecorationLine: 'line-through',
+      color: '#a0a0a0',
+    },
+    notesInput: {
+      backgroundColor: '#5e4d43',
+      borderRadius: 5,
+      fontFamily: 'Nunito Sans',
+      padding: 10,
+      marginTop: 10,
+      color: '#ffffff',
+    },
+    aiSuggestionItem: {
+      backgroundColor: '#5e4d43',
+      borderRadius: 10,
+      padding: 10,
+      marginHorizontal: 10,
+      marginBottom: 10,
+    },
+    aiSuggestionText: {
+      fontSize: 16,
+      color: '#ffffff',
+      fontFamily: 'Nunito Sans',
+    },
+    addActivityContainer: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      marginHorizontal: 10,
+      marginBottom: 20,
+  
+      shadowColor: '#000000',
+      shadowOffset: {
+        width: 3,
+        height: 2,
+      },
+      shadowOpacity: 0.5,
+      shadowRadius: 3.5,
+      
+      elevation: 5,
+    },
+    addActivityInput: {
+      flex: 1,
+      height: 40,
+      fontFamily: 'Nunito Sans',
+      backgroundColor: '#5e4d43',
+      borderRadius: 10,
+      paddingHorizontal: 10,
+      marginRight: 10,
+      color: '#ffffff',
+    },
+    addButton: {
+      backgroundColor: '#4CAF50',
+      width: 40,
+      height: 40,
+      borderRadius: 20,
+      fontFamily: 'Nunito Sans',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+  });
 
 export default ActivitiesPage;

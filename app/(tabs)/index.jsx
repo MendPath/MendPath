@@ -53,8 +53,8 @@ const HomeScreen = () => {
 
         <ScrollView style={styles.chatContainer}>
           <View style={styles.backdrop}>
-            <Text style={styles.backdropText}>Hotline: <Text style={styles.brightText}>9999999</Text></Text>
-            <Text style={styles.backdropText}>Emergency: <Text style={styles.brightText}>911</Text></Text>
+            <Text style={styles.backdropText}>Crisis Hotline: Call 988 </Text>
+            <Text style={styles.backdropText}>In Case of an Emergency: Call 911</Text>
           </View>
           {chatHistory.map((chat, index) => (
             <View key={index} style={chat.sender === 'user' ? styles.userMessageContainer : styles.botMessageContainer}>
@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
   backdrop: {
     padding: 16,
     margin: 16,
-    backgroundColor: 'rgba(0, 0, 0, 0.1)', // Adjust to fit your desired color
+    backgroundColor: 'rgba(0, 0, 0, 0.05)', // Adjust to fit your desired color
     borderRadius: 12,
     alignItems: 'center',
   },
