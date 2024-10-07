@@ -5,6 +5,8 @@ MendPath, a community-based empathic-central therapeutic app that helps you find
 ## Features
 ![ios-app](/assets/images/ios-app.png)
 
+Link to DEMO on Youtube : [youtube.com/watch?v=4atKUeoOb3E](https://www.youtube.com/watch?v=4atKUeoOb3E)
+
 Test our empathic voice therapist [www.mendpath.us](https://www.mendpath.us/) (Use the voice-to-voice)
 
 Our main features are on iOS, this was a work around to not dealing with iOS builds and the apple developer reviewing process, more details in the slide deck.
